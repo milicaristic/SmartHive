@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SmartHives</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet" />
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="css/tooplate-chilling-cafe.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="tm-container">
+      <div class="tm-text-white tm-page-header-container">
+        <h1 class="tm-page-header">Smart Hives</h1>
+      </div>
+      <div class="tm-main-content">
+        <div id="tm-intro-img"></div>
+        
+        <!-- Choose -->
+        <section class="tm-section tm-section-small">
+          <h2 class="tm-section-header">Choose your group of hives</h2>
+          <div class="tm-responsive-table">
+            <table>
+              <tr>
+                <td class="tm-text-left">
+                  <SELECT>
+                    <OPTION> Group of hives A </OPTION>
+                    <OPTION> Group of hives B </OPTION>
+                    <OPTION> Group of hives C </OPTION>
+                    </SELECT>
+                </td>
+                <td> 
+                  <SELECT id= "time" name="time">
+                        <OPTION value="1"> Now </OPTION>
+                        <OPTION value="2"> Last 15 minutes </OPTION>
+                        <OPTION value="3"> Last 30 minutes </OPTION>
+                        <OPTION value="4"> Last hour </OPTION>
+                        <OPTION value="5"> Last 24 hour </OPTION>
+                        <OPTION value="6"> Last 7 days </OPTION>
+                  </SELECT>
+                </td>
+                <td></td>
+                <td>
+                  <button type="button" id= "analyze" name="analyze" >Analyze</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </section>
+        <hr />
+        
+        <!-- DATA -->
+        
+        <section class="tm-section">
+          <h2 class="tm-section-header">Data for the selected group of hives</h2>
+          <div class="tm-responsive-table">
+            <%data_List.forEach(data =>{%>
+            <table>
+              <tr>
+                <td class="tm-text-left">Temperature</td>
+                <td></td>
+                <td></td>
+                <td id = 'temp'><%= data.temperature %></td>
+              </tr>
+              <tr>
+                <td class="tm-text-left">Humidity</td>
+                <td></td>
+                <td></td>
+                <td id = 'hum'><%= data.humidity %></td>
+              </tr>
+              <tr>
+                <td class="tm-text-left">CO2</td>
+                <td></td>
+                <td></td>
+                <td id = 'CO2'><%= data.co2 %></td>
+              </tr>
+            </table>
+            <%})%>
+          </div>
+        </section>
+
+        <!-- Alerts -->
+        <section class="tm-section tm-section-small">
+          <h2 class="tm-section-header">Alerts</h2>
+          <p id='temperatureID' class="tm-mb-0"> </p>
+          <p id='humidityID' class="tm-mb-0"> </p>
+          <p id='co2ID' class="tm-mb-0"> </p>
+        </section>
+        <hr />
+
+        <!-- Special Items -->
+        <section class="tm-section">
+          <h2 class="tm-section-header">Smart Hive Products</h2>
+          <div class="tm-special-items">
+            <figure class="tm-special-item">
+              <img src="img/product1.jpg" alt="Image" class="tm-special-item-img" />
+              <figcaption>
+                <span class="tm-item-name">Adopt a hive</span>
+                <span class="tm-item-price">$450</span>
+              </figcaption>
+            </figure>
+            <figure class="tm-special-item">
+              <img src="img/product2.jpg" alt="Image" class="tm-special-item-img" />
+              <figcaption>
+                <span class="tm-item-name">Beebot</span>
+                <span class="tm-item-price">$570</span>
+              </figcaption>
+            </figure>
+            <figure class="tm-special-item">
+              <img src="img/product4.jpg" alt="Image" class="tm-special-item-img" />
+              <figcaption>
+                <span class="tm-item-name">HiveBase</span>
+                <span class="tm-item-price">$390</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <hr />
+       
+        <!-- About  -->
+        <section class="tm-section tm-section-small">
+          <h2 class="tm-section-header">About Smart Hives</h2>
+          <p>
+            Keeping bees healthy can be a challenge. A lot of beekeepers have a large number of hives, often dispersed over many apiaries.
+            They traditionally only get to inspect an individual hive once every few days or even weeks, and often even less frequently than that. 
+            Meanwhile, challenges for the honey bees have increased seriously as we all see how a bee colony can change itself dramatically over 
+            a short period of time due to different varieties of stressors.
+          </p>
+          <p class="tm-mb-0">
+            But how can a beekeeper monitor a colony’s health status and implement corrective actions at the right time? 
+            We believe that the beekeeping industry is on the verge of a change as we see how it is evolving to meet 
+            the modern challenges and adapt to the digital era by remotely monitoring their hives.
+          </p>
+        </section>
+        <hr />
+        
+        <!-- Talk to us -->
+        <section class="tm-section tm-section-small">
+          <h2 class="tm-section-header">Talk to us</h2>
+          <p class="tm-mb-0">
+            Reach us via
+            <a href="mailto:info@example.com" class="tm-contact-link">Email</a>
+            or follow us on social icons below. Thank you.
+          </p>
+          <div class="tm-social-icons">
+            <div class="tm-social-link-container">
+              <a href="https://fb.com/tooplate" class="tm-social-link">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+            <div class="tm-social-link-container">
+              <a href="https://twitter.com" class="tm-social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <div class="tm-social-link-container">
+              <a href="https://instagram.com" class="tm-social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="tm-social-link-container">
+              <a href="https://pinterest.com" class="tm-social-link">
+                <i class="fab fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <p class="tm-text-white tm-footer-text">
+          Copyright &copy; 2021 FON 
+
+        </p>
+      </footer>
+    </div>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(function() {
+        // Adjust intro image height based on width.
+        $(window).resize(function() {
+          var img = $("#tm-intro-img");
+          var imgWidth = img.width();
+
+          // 640x425 ratio
+          var imgHeight = (imgWidth * 425) / 640;
+
+          if (imgHeight < 300) {
+            imgHeight = 300;
+          }
+
+          img.css("min-height", imgHeight + "px");
+        });
+
+      const btn = document.querySelector('#analyze');
+      const sb = document.querySelector('#time')
+      btn.onclick = (event) => {
+            event.preventDefault();
+            alert(sb.value);
+            switch(sb.value){
+              case 1 : analiziraj(0);
+                break;
+              case 2 : analiziraj(15);
+                break;
+              case 3 : analiziraj(30);
+                break;
+              case 4 : analiziraj(60);
+                break;
+              case 5 : analiziraj(1440);
+                break;
+              case 6 : analiziraj(10080);
+                break;
+            }
+        };
+      });
+
+        $(function citaj(){
+          $.ajaxSetup({
+            cache:false,
+            complete: function() {
+              setTimeout(citaj,1000)
+            }
+          });
+
+          $.getJSON("http://pi-3.intranet.elab.rs:5000/data", function(data){
+            
+            console.log(data);
+                     
+            $('#temp').text(data['temperature']);
+            $('#hum').text(data['humidity']);
+            $('#CO2').text(data['CO2']);
+                        
+            if((data['temperature']<10)||(data['temperature']>38)){
+              $('#temperatureID').text('ALERT! UNFAVORABLE TEMPERATURE!');             
+            }
+
+            else{
+              $('#temperatureID').text('Temperature is fine.');
+            }
+            
+            if((data['humidity']>60) ||(data['humidity']<50)){
+              $('#humidityID').text('ALERT! UNFAVORABLE HUMIDITY!');
+            }
+            else{
+              $('#humidityID').text('Humidity is fine.');
+            }
+
+            if((data['CO2']<7)||(data['CO2']>15)){
+              $('#co2ID').text('ALERT! UNFAVORABLE CO2 LEVEL!');
+            }
+            else{
+              $('#co2ID').text('CO2 is fine.');
+            }
+
+          });  
+      });
+
+      /*$(function analiziraj(i){
+        const express = require('express');
+        const app = express();
+
+
+        var today = new Date();
+        var time = new Date();
+
+        if ( data_col.find_one().get("vreme") >= today - time1(0,0,0,i,0,0)){
+
+        app.get("/", function (req, res) {
+        res.redirect("/index.html");    
+        });
+
+        app.get("/", function (req, res) {
+          data_col.find_one({}, function(err,data){
+            res.render("/index.html", {
+              "data_List": data
+            })
+          })   
+        });
+      }else{
+            $('#temp').text("-");
+            $('#hum').text("-");
+            $('#CO2').text("-");
+      }
+      });*/
+
+
+    </script>
+  </body>
+</html>
